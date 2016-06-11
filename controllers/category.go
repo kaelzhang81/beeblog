@@ -10,4 +10,5 @@ type CategoryController struct {
 
 func (this *CategoryController) Get() {
 	this.TplName = "category.html"
+	this.Data["IsCategory"] = true
 }
