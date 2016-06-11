@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;beeblog&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../myapp" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../src" />
+    </CLASSES>
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
