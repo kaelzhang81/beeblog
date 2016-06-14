@@ -51,6 +51,20 @@ func RegisterDB() {
 	orm.RegisterDataBase("default", _SQLITE3_DRIVER, _DB_NAME, 10)
 }
 
+func AddTopic(title, content string) error {
+	o := orm.NewOrm()
+
+	topic := &Topic{
+		Title:   title,
+		Content: content,
+		Created: time.Now(),
+		Updated: time.Now(),
+	}
+
+	_, err := o.Insert(topic)
+	return err
+}
+
 func AddCategory(name string) error {
 	o := orm.NewOrm()
 
@@ -86,6 +100,15 @@ func DeleteCategory(id string) error {
 	cate := &Category{Id: cid}
 	_, err = o.Delete(cate)
 	return err
+}
+
+func GetAllTopics() ([]*Topic, error) {
+	o := orm.NewOrm()
+	topics := make([]*Topic, 0)
+	qs := o.QueryTable("Topic")
+
+	_, err := qs.All(&topics)
+	return topics, err
 }
 
 func GetAllCategories() ([]*Category, error) {
