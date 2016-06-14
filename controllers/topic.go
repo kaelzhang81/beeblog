@@ -10,6 +10,7 @@ type TopicController struct {
 }
 
 func (this *TopicController) Get() {
+    this.Data["IsLogin"] = checkAccount(this.Ctx)
 	this.Data["IsTopic"] = true
 	this.TplName = "topic.html"
 }
