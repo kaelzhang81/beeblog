@@ -1,8 +1,6 @@
 package controllers
 
 import (
-	//	"fmt"
-
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 )
@@ -29,8 +27,8 @@ func (this *LoginController) Post() {
 	pwd := this.Input().Get("pwd")
 	autoLogin := this.Input().Get("autoLogin") == "on"
 
-	if beego.AppConfig.String("uname") == "admin" &&
-		beego.AppConfig.String("pwd") == "admin" {
+	if beego.AppConfig.String("uname") == uname &&
+		beego.AppConfig.String("pwd") == pwd {
 		maxAge := 0
 		if autoLogin {
 			maxAge = 1<<31 - 1
@@ -39,7 +37,7 @@ func (this *LoginController) Post() {
 		this.Ctx.SetCookie("pwd", pwd, maxAge, "/")
 	}
 
-	this.Redirect("/", 301)
+	this.Redirect("/", 302)
 	return
 }
 
