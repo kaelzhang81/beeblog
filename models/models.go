@@ -107,10 +107,11 @@ func AddTopic(title, content string) error {
 	o := orm.NewOrm()
 
 	topic := &Topic{
-		Title:   title,
-		Content: content,
-		Created: time.Now(),
-		Updated: time.Now(),
+		Title:     title,
+		Content:   content,
+		Created:   time.Now(),
+		Updated:   time.Now(),
+		ReplyTime: time.Now(),
 	}
 	_, err := o.Insert(topic)
 	return err
