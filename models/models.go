@@ -145,7 +145,7 @@ func ModifyTopic(tid, title, content string) error {
 
 	o := orm.NewOrm()
 	topic := &Topic{Id: tidNum}
-	if o.Read(topic) != nil {
+	if o.Read(topic) == nil {
 		topic.Title = title
 		topic.Content = content
 		topic.Updated = time.Now()
