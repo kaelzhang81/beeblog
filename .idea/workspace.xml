@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="" />
+    <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beeblog" afterPath="$PROJECT_DIR$/beeblog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/beeblog.db" afterPath="$PROJECT_DIR$/data/beeblog.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/topic.go" afterPath="$PROJECT_DIR$/controllers/topic.go" />
+    </list>
     <ignored path="beeblog.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,23 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.html">
+      <file leaf-file-name="topic.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/topic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="525">
+              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/topic.html">
+      <file leaf-file-name="topic.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/topic.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+            <state relative-caret-position="264">
+              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -49,18 +52,6 @@
             <state relative-caret-position="75">
               <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/home.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1465995407000" expanded="true" signature="347:350" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +86,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/models.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+              <folding>
+                <marker date="1466256305000" expanded="true" signature="23:41" placeholder="..." />
+                <marker date="1466256305000" expanded="true" signature="3318:3326" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,14 +112,14 @@
       <file leaf-file-name="topic_modify.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/topic_modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="15">
               <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic_view.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="topic_view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/topic_view.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -414,12 +418,12 @@
       <workItem from="1465782287991" duration="27000" />
       <workItem from="1465789288814" duration="158000" />
       <workItem from="1465814697138" duration="129000" />
-      <workItem from="1465818565603" duration="7840000" />
+      <workItem from="1465818565603" duration="8494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16833000" />
+    <option name="totallyTimeSpent" value="17487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -706,17 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/models.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding>
-            <marker date="1466256305000" expanded="true" signature="23:41" placeholder="..." />
-            <marker date="1466256305000" expanded="true" signature="3318:3326" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/category.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -785,25 +778,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/topic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/topic_add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/topic_modify.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
@@ -813,6 +790,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/topic_modify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/topic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+          <folding>
+            <marker date="1466256305000" expanded="true" signature="23:41" placeholder="..." />
+            <marker date="1466256305000" expanded="true" signature="3318:3326" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/topic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -46,7 +46,7 @@ func (this *TopicController) Post() {
 	this.Redirect("/topic", 302)
 }
 
-func (this *TopicController) delete() {
+func (this *TopicController) Delete() {
 	if !checkAccount(this.Ctx) {
 		this.Redirect("/login", 302)
 		return
