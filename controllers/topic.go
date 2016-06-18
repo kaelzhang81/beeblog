@@ -80,8 +80,8 @@ func (this *TopicController) Modify() {
 	}
 
 	this.TplName = "topic_modify.html"
-	this.Data["tid"] = tid
-	this.Data["topic"] = topic
+	this.Data["Tid"] = tid
+	this.Data["Topic"] = topic
 }
 
 func (this *TopicController) View() {
