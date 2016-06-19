@@ -193,18 +193,18 @@ func GetAllTopics(isDesc bool) (topics []*Topic, err error) {
 }
 
 func AddReply(tid, nickname, content string) error {
-	tidNum, err := strconv(tid, 10, 64)
+	tidNum, err := strconv.ParseInt(tid, 10, 64)
 	if err != nil {
 		return err
 	}
-    
-    comment := &Comment{
-        Tid: tidNum,
-        Name: nickname,
-        Content: content,
-        Created: time.Now()
-    }
-    o := orm.NewOrm()
-    err = o.Insert(comment)
-    return err
+
+	comment := &Comment{
+		Tid:     tidNum,
+		Name:    nickname,
+		Content: content,
+		Created: time.Now(),
+	}
+	o := orm.NewOrm()
+	_, err = o.Insert(comment)
+	return err
 }
