@@ -4,8 +4,6 @@
     <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beeblog" afterPath="$PROJECT_DIR$/beeblog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/beeblog.db" afterPath="$PROJECT_DIR$/data/beeblog.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/topic.go" afterPath="$PROJECT_DIR$/controllers/topic.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/models.go" afterPath="$PROJECT_DIR$/models/models.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/topic_add.html" afterPath="$PROJECT_DIR$/views/topic_add.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/topic_modify.html" afterPath="$PROJECT_DIR$/views/topic_modify.html" />
     </list>
@@ -71,8 +69,8 @@
       <file leaf-file-name="topic_add.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/topic_add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="245">
+              <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -114,8 +112,8 @@
       <file leaf-file-name="topic_modify.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/topic_modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -406,12 +404,12 @@
       <workItem from="1465782287991" duration="27000" />
       <workItem from="1465789288814" duration="158000" />
       <workItem from="1465814697138" duration="129000" />
-      <workItem from="1465818565603" duration="9858000" />
+      <workItem from="1465818565603" duration="10118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18851000" />
+    <option name="totallyTimeSpent" value="19111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -803,16 +801,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/topic_modify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/topic_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="245">
+          <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
           <folding />
         </state>
       </provider>
