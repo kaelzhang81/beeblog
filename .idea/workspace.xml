@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beeblog" afterPath="$PROJECT_DIR$/beeblog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/beeblog.db" afterPath="$PROJECT_DIR$/data/beeblog.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/topic_view.html" afterPath="$PROJECT_DIR$/views/topic_view.html" />
-    </list>
+    <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="" />
     <ignored path="beeblog.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,8 +117,8 @@
       <file leaf-file-name="topic_view.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/topic_view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="195">
+              <caret line="24" column="65" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -403,12 +399,12 @@
       <workItem from="1465782287991" duration="27000" />
       <workItem from="1465789288814" duration="158000" />
       <workItem from="1465814697138" duration="129000" />
-      <workItem from="1465818565603" duration="11366000" />
+      <workItem from="1465818565603" duration="11725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20359000" />
+    <option name="totallyTimeSpent" value="20718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -808,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/topic_view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="6" />
+        <state relative-caret-position="195">
+          <caret line="24" column="65" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="66" />
           <folding />
         </state>
       </provider>
