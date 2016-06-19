@@ -46,6 +46,14 @@ type Topic struct {
 	ReplyLastUserId int64
 }
 
+type Comment struct {
+	Id      int64
+	Tid     int64
+	Name    string
+	Content string    `orm:"size(1000)"`
+	Created time.Time `orm:"index"`
+}
+
 func RegisterDB() {
 	// 检查数据库文件
 	if !com.IsExist(_DB_NAME) {

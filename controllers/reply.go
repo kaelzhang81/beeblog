@@ -20,5 +20,5 @@ func (this *ReplyControllers) Add() {
 		beego.Error(err)
 	}
 
-	this.Redirect("/topic/views/" + tid)
+	this.Redirect("/topic/views/"+tid, 302)
 }
