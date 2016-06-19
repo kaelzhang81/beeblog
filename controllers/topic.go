@@ -30,13 +30,14 @@ func (this *TopicController) Post() {
 
 	tid := this.Input().Get("tid")
 	title := this.Input().Get("title")
+	category := this.Input().Get("category")
 	content := this.Input().Get("content")
 
 	var err error
 	if len(tid) == 0 {
-		err = models.AddTopic(title, content)
+		err = models.AddTopic(title, category, content)
 	} else {
-		err = models.ModifyTopic(tid, title, content)
+		err = models.ModifyTopic(tid, title, category, content)
 	}
 
 	if err != nil {
