@@ -62,7 +62,7 @@ func RegisterDB() {
 	}
 
 	// 注册模型
-	orm.RegisterModel(new(Category), new(Topic))
+	orm.RegisterModel(new(Category), new(Topic), new(Comment))
 	// 注册驱动（“sqlite3” 属于默认注册，此处代码可省略）
 	orm.RegisterDriver(_SQLITE3_DRIVER, orm.DRSqlite)
 	// 注册默认数据库
@@ -190,4 +190,21 @@ func GetAllTopics(isDesc bool) (topics []*Topic, err error) {
 		_, err = qs.All(&topics)
 	}
 	return topics, err
+}
+
+func AddReply(tid, nickname, content string) error {
+	tidNum, err := strconv(tid, 10, 64)
+	if err != nil {
+		return err
+	}
+    
+    comment := &Comment{
+        Tid: tidNum,
+        Name: nickname,
+        Content: content,
+        Created: time.Now()
+    }
+    o := orm.NewOrm()
+    err = o.Insert(comment)
+    return err
 }

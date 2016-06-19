@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/reply.go" afterPath="$PROJECT_DIR$/controllers/reply.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/models.go" afterPath="$PROJECT_DIR$/models/models.go" />
     </list>
     <ignored path="beeblog.iws" />
@@ -88,10 +87,10 @@
         <entry file="file://$PROJECT_DIR$/models/models.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="148">
-              <caret line="169" column="5" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+              <caret line="186" column="5" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
               <folding>
-                <marker date="1466330632000" expanded="true" signature="23:41" placeholder="..." />
-                <marker date="1466330632000" expanded="true" signature="3555:3563" placeholder="{...}" />
+                <marker date="1466331189000" expanded="true" signature="23:41" placeholder="..." />
+                <marker date="1466331189000" expanded="true" signature="3555:3563" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -402,12 +401,12 @@
       <workItem from="1465782287991" duration="27000" />
       <workItem from="1465789288814" duration="158000" />
       <workItem from="1465814697138" duration="129000" />
-      <workItem from="1465818565603" duration="11988000" />
+      <workItem from="1465818565603" duration="12138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20981000" />
+    <option name="totallyTimeSpent" value="21131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -528,8 +527,8 @@
         <state relative-caret-position="420">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <marker date="1466330632000" expanded="true" signature="23:41" placeholder="..." />
-            <marker date="1466330632000" expanded="true" signature="3555:3563" placeholder="{...}" />
+            <marker date="1466331189000" expanded="true" signature="23:41" placeholder="..." />
+            <marker date="1466331189000" expanded="true" signature="3555:3563" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -615,8 +614,8 @@
         <state relative-caret-position="300">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <marker date="1466330632000" expanded="true" signature="23:41" placeholder="..." />
-            <marker date="1466330632000" expanded="true" signature="3555:3563" placeholder="{...}" />
+            <marker date="1466331189000" expanded="true" signature="23:41" placeholder="..." />
+            <marker date="1466331189000" expanded="true" signature="3555:3563" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -765,10 +764,10 @@
     <entry file="file://$PROJECT_DIR$/models/models.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
-          <caret line="169" column="5" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <caret line="186" column="5" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
           <folding>
-            <marker date="1466330632000" expanded="true" signature="23:41" placeholder="..." />
-            <marker date="1466330632000" expanded="true" signature="3555:3563" placeholder="{...}" />
+            <marker date="1466331189000" expanded="true" signature="23:41" placeholder="..." />
+            <marker date="1466331189000" expanded="true" signature="3555:3563" placeholder="{...}" />
           </folding>
         </state>
       </provider>
