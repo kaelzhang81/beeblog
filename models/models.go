@@ -178,13 +178,16 @@ func DeleteTopic(tid string) error {
 	return err
 }
 
-func GetAllTopics(isDesc bool) (topics []*Topic, err error) {
+func GetAllTopics(cate string, isDesc bool) (topics []*Topic, err error) {
 	o := orm.NewOrm()
 
 	topics = make([]*Topic, 0)
 
 	qs := o.QueryTable("topic")
 	if isDesc {
+		if len(cate) > 0 {
+			qs = qs.Filter("category", cate)
+		}
 		_, err = qs.OrderBy("-created").All(&topics)
 	} else {
 		_, err = qs.All(&topics)
