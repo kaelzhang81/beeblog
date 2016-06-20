@@ -208,3 +208,16 @@ func AddReply(tid, nickname, content string) error {
 	_, err = o.Insert(comment)
 	return err
 }
+
+func GetAllReplies(tid string) ([]*Comment, error) {
+	tidNum, err := strconv.ParseInt(tid, 10, 64)
+	if err != nil {
+		return nil, err
+	}
+
+	replies := make([]*Comment, 0)
+	o := orm.NewOrm()
+	qs := o.QueryTable("comment")
+	_, err = qs.Filter("tid", tidNum).All(&replies)
+	return replies, nil
+}

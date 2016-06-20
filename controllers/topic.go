@@ -87,11 +87,21 @@ func (this *TopicController) Modify() {
 
 func (this *TopicController) View() {
 	this.TplName = "topic_view.html"
-	topic, err := models.GetTopic(this.Ctx.Input.Params()["0"])
+	tid := this.Ctx.Input.Params()["0"]
+	topic, err := models.GetTopic(tid)
 	if err != nil {
 		beego.Error(err)
 		this.Redirect("/", 302)
 		return
 	}
 	this.Data["Topic"] = topic
+
+	var replies []*models.Comment
+	replies, err = models.GetAllReplies(tid)
+	if err != nil {
+		beego.Error(err)
+		return
+	}
+	this.Data["Replies"] = replies
+	this.Data["IsLogin"] = checkAccount(this.Ctx)
 }

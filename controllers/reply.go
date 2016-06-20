@@ -6,11 +6,11 @@ import (
 	"github.com/astaxie/beego"
 )
 
-type ReplyControllers struct {
+type ReplyController struct {
 	beego.Controller
 }
 
-func (this *ReplyControllers) Add() {
+func (this *ReplyController) Add() {
 	tid := this.Input().Get("tid")
 	err := models.AddReply(tid,
 		this.Input().Get("nickname"),
@@ -20,5 +20,5 @@ func (this *ReplyControllers) Add() {
 		beego.Error(err)
 	}
 
-	this.Redirect("/topic/views/"+tid, 302)
+	this.Redirect("/topic/view/"+tid, 302)
 }
