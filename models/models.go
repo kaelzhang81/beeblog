@@ -124,6 +124,22 @@ func AddTopic(title, category, content string) error {
 		ReplyTime: time.Now(),
 	}
 	_, err := o.Insert(topic)
+	if err != nil {
+		return err
+	}
+
+	cate := new(Category)
+	qs := o.QueryTable("category")
+	err = qs.Filter("title", category).One(cate)
+	if err == nil {
+		topics, err := GetAllTopics(category, false)
+		if err != nil {
+			cate.TopicCount++
+		} else {
+			cate.TopicCount = int64(len(topics))
+		}
+		_, err = o.Update(cate)
+	}
 	return err
 }
 
