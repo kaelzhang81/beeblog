@@ -1,6 +1,7 @@
 package models
 
 import (
+	"log"
 	"os"
 	"path"
 	"strconv"
@@ -128,19 +129,7 @@ func AddTopic(title, category, content string) error {
 		return err
 	}
 
-	cate := new(Category)
-	qs := o.QueryTable("category")
-	err = qs.Filter("title", category).One(cate)
-	if err == nil {
-		topics, err := GetAllTopics(category, false)
-		if err != nil {
-			cate.TopicCount++
-		} else {
-			cate.TopicCount = int64(len(topics))
-		}
-		_, err = o.Update(cate)
-	}
-	return err
+	return updateCategoryCount(category)
 }
 
 func GetTopic(tid string) (*Topic, error) {
@@ -164,6 +153,7 @@ func GetTopic(tid string) (*Topic, error) {
 }
 
 func ModifyTopic(tid, title, category, content string) error {
+	var oldCate string
 	tidNum, err := strconv.ParseInt(tid, 10, 64)
 	if err != nil {
 		return err
@@ -172,11 +162,39 @@ func ModifyTopic(tid, title, category, content string) error {
 	o := orm.NewOrm()
 	topic := &Topic{Id: tidNum}
 	if o.Read(topic) == nil {
+		oldCate = topic.Category
 		topic.Title = title
 		topic.Category = category
 		topic.Content = content
 		topic.Updated = time.Now()
 		_, err = o.Update(topic)
+		if err != nil {
+			return nil
+		}
+	}
+
+	if len(oldCate) > 0 {
+		err = updateCategoryCount(oldCate)
+		if err != nil {
+			return err
+		}
+	}
+
+	return updateCategoryCount(category)
+}
+
+func updateCategoryCount(category string) error {
+	o := orm.NewOrm()
+	cate := new(Category)
+	qs := o.QueryTable("category")
+	err := qs.Filter("title", category).One(cate)
+	if err == nil {
+		topics, err := GetAllTopics(category, false)
+		if err == nil {
+			cate.TopicCount = int64(len(topics))
+			log.Println(category, cate.TopicCount)
+			_, err = o.Update(cate)
+		}
 	}
 
 	return err
@@ -188,9 +206,20 @@ func DeleteTopic(tid string) error {
 		return err
 	}
 
+	topic := new(Topic)
 	o := orm.NewOrm()
-	topic := &Topic{Id: tidNum}
+	qs := o.QueryTable("topic")
+	err = qs.Filter("id", tidNum).One(topic)
+	if err != nil {
+		topic.Id = tidNum
+	}
+
+	cate := topic.Category
 	_, err = o.Delete(topic)
+	if err == nil && len(topic.Category) > 0 {
+		return updateCategoryCount(cate)
+	}
+
 	return err
 }
 
@@ -200,10 +229,10 @@ func GetAllTopics(cate string, isDesc bool) (topics []*Topic, err error) {
 	topics = make([]*Topic, 0)
 
 	qs := o.QueryTable("topic")
+	if len(cate) > 0 {
+		qs = qs.Filter("category", cate)
+	}
 	if isDesc {
-		if len(cate) > 0 {
-			qs = qs.Filter("category", cate)
-		}
 		_, err = qs.OrderBy("-created").All(&topics)
 	} else {
 		_, err = qs.All(&topics)

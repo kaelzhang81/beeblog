@@ -4,6 +4,7 @@
       <root url="file://$PROJECT_DIR$/../myapp" />
       <root url="file://$PROJECT_DIR$/../github.com" />
       <root url="file://$PROJECT_DIR$/../src" />
+      <root url="file://$PROJECT_DIR$/../go-web-foundation-master" />
     </CLASSES>
     <SOURCES />
     <excluded>
