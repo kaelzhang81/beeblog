@@ -254,6 +254,16 @@ func AddReply(tid, nickname, content string) error {
 	}
 	o := orm.NewOrm()
 	_, err = o.Insert(comment)
+
+	if err == nil {
+		topic := &Topic{Id: tidNum}
+		if o.Read(topic) == nil {
+			topic.ReplyCount++
+			topic.ReplyTime = comment.Created
+			_, err = o.Update(topic)
+		}
+	}
+
 	return err
 }
 
@@ -277,7 +287,33 @@ func DeleteReply(rid string) error {
 	}
 
 	o := orm.NewOrm()
+
+	var tidNum int64
 	reply := &Comment{Id: ridNum}
-	_, err = o.Delete(reply)
+	if o.Read(reply) == nil {
+		tidNum = reply.Tid
+		_, err = o.Delete(reply)
+		if err != nil {
+			return err
+		}
+	}
+
+	replies := make([]*Comment, 0)
+	qs := o.QueryTable("comment")
+	_, err = qs.Filter("tid", tidNum).OrderBy("-created").All(&replies)
+	if err != nil {
+		return err
+	}
+
+	topic := &Topic{Id: tidNum}
+	if o.Read(topic) == nil {
+		topic.ReplyCount = int64(len(replies))
+		if topic.ReplyCount > 0 {
+			topic.ReplyTime = replies[0].Created
+		}
+
+		_, err = o.Update(topic)
+	}
+
 	return err
 }
