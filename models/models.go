@@ -115,16 +115,18 @@ func GetAllCategories() ([]*Category, error) {
 	return cates, err
 }
 
-func AddTopic(title, category, labels, content string) error {
-	labels = "$" + strings.Join(strings.Split(labels, " "), "#$") + "#"
+func formatLabels(labels string) string {
+	return "$" + strings.Join(strings.Split(labels, " "), "#$") + "#"
+}
 
+func AddTopic(title, category, labels, content string) error {
 	o := orm.NewOrm()
 
 	topic := &Topic{
 		Title:     title,
 		Content:   content,
 		Category:  category,
-		Labels:    labels,
+		Labels:    formatLabels(labels),
 		Created:   time.Now(),
 		Updated:   time.Now(),
 		ReplyTime: time.Now(),
@@ -154,10 +156,12 @@ func GetTopic(tid string) (*Topic, error) {
 
 	topic.Views++
 	_, err = o.Update(topic)
+
+	topic.Labels = strings.Replace(strings.Replace(topic.Labels, "#", " ", -1), "$", "", -1)
 	return topic, nil
 }
 
-func ModifyTopic(tid, title, category, content string) error {
+func ModifyTopic(tid, title, category, labels, content string) error {
 	var oldCate string
 	tidNum, err := strconv.ParseInt(tid, 10, 64)
 	if err != nil {
@@ -170,6 +174,7 @@ func ModifyTopic(tid, title, category, content string) error {
 		oldCate = topic.Category
 		topic.Title = title
 		topic.Category = category
+		topic.Labels = formatLabels(labels)
 		topic.Content = content
 		topic.Updated = time.Now()
 		_, err = o.Update(topic)
