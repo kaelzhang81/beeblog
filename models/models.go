@@ -5,6 +5,7 @@ import (
 	"os"
 	"path"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/Unknwon/com"
@@ -36,6 +37,7 @@ type Topic struct {
 	Uid             int64
 	Title           string
 	Category        string
+	Labels          string
 	Content         string `orm:"size(5000)"`
 	Attachment      string
 	Created         time.Time `orm:"index"`
@@ -113,13 +115,16 @@ func GetAllCategories() ([]*Category, error) {
 	return cates, err
 }
 
-func AddTopic(title, category, content string) error {
+func AddTopic(title, category, labels, content string) error {
+	labels = "$" + strings.Join(strings.Split(labels, " "), "#$") + "#"
+
 	o := orm.NewOrm()
 
 	topic := &Topic{
 		Title:     title,
 		Content:   content,
 		Category:  category,
+		Labels:    labels,
 		Created:   time.Now(),
 		Updated:   time.Now(),
 		ReplyTime: time.Now(),
