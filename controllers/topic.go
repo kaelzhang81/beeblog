@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"beeblog/models"
+	"strings"
 
 	"github.com/astaxie/beego"
 )
@@ -96,6 +97,7 @@ func (this *TopicController) View() {
 		return
 	}
 	this.Data["Topic"] = topic
+	this.Data["Labels"] = strings.Split(topic.Labels, " ")
 
 	var replies []*models.Comment
 	replies, err = models.GetAllReplies(tid)
