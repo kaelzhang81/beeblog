@@ -199,7 +199,7 @@ func updateCategoryCount(category string) error {
 	qs := o.QueryTable("category")
 	err := qs.Filter("title", category).One(cate)
 	if err == nil {
-		topics, err := GetAllTopics(category, false)
+		topics, err := GetAllTopics(category, "", false)
 		if err == nil {
 			cate.TopicCount = int64(len(topics))
 			log.Println(category, cate.TopicCount)
@@ -233,7 +233,7 @@ func DeleteTopic(tid string) error {
 	return err
 }
 
-func GetAllTopics(cate string, isDesc bool) (topics []*Topic, err error) {
+func GetAllTopics(cate, label string, isDesc bool) (topics []*Topic, err error) {
 	o := orm.NewOrm()
 
 	topics = make([]*Topic, 0)
@@ -241,6 +241,9 @@ func GetAllTopics(cate string, isDesc bool) (topics []*Topic, err error) {
 	qs := o.QueryTable("topic")
 	if len(cate) > 0 {
 		qs = qs.Filter("category", cate)
+	}
+	if len(label) > 0 {
+		qs = qs.Filter("labels__contains", "$"+label+"#")
 	}
 	if isDesc {
 		_, err = qs.OrderBy("-created").All(&topics)

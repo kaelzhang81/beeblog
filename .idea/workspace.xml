@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c6da7d4-e4ce-489e-a336-d61b75702e7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beeblog" afterPath="$PROJECT_DIR$/beeblog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/beeblog.db" afterPath="$PROJECT_DIR$/data/beeblog.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/topic.go" afterPath="$PROJECT_DIR$/controllers/topic.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/topic_view.html" afterPath="$PROJECT_DIR$/views/topic_view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/home.go" afterPath="$PROJECT_DIR$/controllers/home.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/models.go" afterPath="$PROJECT_DIR$/models/models.go" />
     </list>
     <ignored path="beeblog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -374,12 +372,12 @@
       <workItem from="1465789288814" duration="158000" />
       <workItem from="1465814697138" duration="129000" />
       <workItem from="1465818565603" duration="16111000" />
-      <workItem from="1466574576747" duration="1510000" />
+      <workItem from="1466574576747" duration="1620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26614000" />
+    <option name="totallyTimeSpent" value="26724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
