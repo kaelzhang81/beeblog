@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	//	"beeblog/controllers"
 	"beeblog/models"
 	"beeblog/routers"
@@ -19,6 +20,8 @@ func main() {
 	orm.Debug = true
 	// 自动建表
 	orm.RunSyncdb("default", false, true)
+
+	os.Mkdir("attachment", os.ModePerm)
 
 	// 注册 beego 路由
 	routers.Init()

@@ -119,17 +119,18 @@ func formatLabels(labels string) string {
 	return "$" + strings.Join(strings.Split(labels, " "), "#$") + "#"
 }
 
-func AddTopic(title, category, labels, content string) error {
+func AddTopic(title, category, labels, content, attachment string) error {
 	o := orm.NewOrm()
 
 	topic := &Topic{
-		Title:     title,
-		Content:   content,
-		Category:  category,
-		Labels:    formatLabels(labels),
-		Created:   time.Now(),
-		Updated:   time.Now(),
-		ReplyTime: time.Now(),
+		Title:      title,
+		Content:    content,
+		Category:   category,
+		Attachment: attachment,
+		Labels:     formatLabels(labels),
+		Created:    time.Now(),
+		Updated:    time.Now(),
+		ReplyTime:  time.Now(),
 	}
 	_, err := o.Insert(topic)
 	if err != nil {
@@ -161,8 +162,8 @@ func GetTopic(tid string) (*Topic, error) {
 	return topic, nil
 }
 
-func ModifyTopic(tid, title, category, labels, content string) error {
-	var oldCate string
+func ModifyTopic(tid, title, category, labels, content, attachment string) error {
+	var oldCate, oldAttch string
 	tidNum, err := strconv.ParseInt(tid, 10, 64)
 	if err != nil {
 		return err
@@ -172,8 +173,10 @@ func ModifyTopic(tid, title, category, labels, content string) error {
 	topic := &Topic{Id: tidNum}
 	if o.Read(topic) == nil {
 		oldCate = topic.Category
+		oldAttch = topic.Attachment
 		topic.Title = title
 		topic.Category = category
+		topic.Attachment = attachment
 		topic.Labels = formatLabels(labels)
 		topic.Content = content
 		topic.Updated = time.Now()
@@ -188,6 +191,10 @@ func ModifyTopic(tid, title, category, labels, content string) error {
 		if err != nil {
 			return err
 		}
+	}
+
+	if len(oldAttch) > 0 {
+		os.Remove(path.Join("attachment", oldAttch))
 	}
 
 	return updateCategoryCount(category)

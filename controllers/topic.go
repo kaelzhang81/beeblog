@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"beeblog/models"
+	"path"
 	"strings"
 
 	"github.com/astaxie/beego"
@@ -35,11 +36,25 @@ func (this *TopicController) Post() {
 	labels := this.Input().Get("labels")
 	content := this.Input().Get("content")
 
-	var err error
+	_, fh, err := this.GetFile("attachment")
+	if err != nil {
+		beego.Error(err)
+	}
+
+	var attachment string
+	if fh != nil {
+		attachment = fh.Filename
+		beego.Info(attachment)
+		err = this.SaveToFile("attachment", path.Join("attachment", attachment))
+		if err != nil {
+			beego.Error(err)
+		}
+	}
+
 	if len(tid) == 0 {
-		err = models.AddTopic(title, category, labels, content)
+		err = models.AddTopic(title, category, labels, content, attachment)
 	} else {
-		err = models.ModifyTopic(tid, title, category, labels, content)
+		err = models.ModifyTopic(tid, title, category, labels, content, attachment)
 	}
 
 	if err != nil {
