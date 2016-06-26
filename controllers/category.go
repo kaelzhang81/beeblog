@@ -3,7 +3,6 @@ package controllers
 import (
 	"beeblog/models"
 	"fmt"
-	//	"log"
 
 	"github.com/astaxie/beego"
 )
